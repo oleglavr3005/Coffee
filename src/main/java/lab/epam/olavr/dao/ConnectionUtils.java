@@ -7,8 +7,7 @@ import java.sql.SQLException;
 public class ConnectionUtils {
     private final static String FAILED_REGISTRATE_DRIVER = "Failed to Registrate JDBC Driver";
     private static volatile ConnectionUtils instance = null;
-    //
-    // TODO Develop Multithreading for Connection
+
     private Connection connection = null;
     private DataSource dataSource;
 
@@ -58,7 +57,6 @@ public class ConnectionUtils {
 
     public static void closeConnection() {
         if (instance != null) {
-            // TODO Develop Multithreading for() 
             if (instance.getConnection() != null) {
                 try {
                     instance.getConnection().close();

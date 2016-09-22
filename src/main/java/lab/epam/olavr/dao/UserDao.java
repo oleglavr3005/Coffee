@@ -4,13 +4,15 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.log4j.Logger;
+
 import lab.epam.olavr.dao.UserDB.UserDBQueries;
 import lab.epam.olavr.exception.GeneralCustomException;
 
 
 public class UserDao extends ADao<UserDB> {
 	private static volatile UserDao instance = null;
-
+	public static final Logger log = Logger.getLogger(UserDao.class);  
 	private UserDao() {
 		super();
 		init();
@@ -91,17 +93,16 @@ public class UserDao extends ADao<UserDB> {
             result = statement.execute(String.format(query,password, login));
         } catch (SQLException e) {
             throw new GeneralCustomException(DATABASE_READING_ERROR, e);
-//            throw new RuntimeException(DATABASE_READING_ERROR, e);
+
         } finally {
             if (statement != null) {
                 try {
                     statement.close();
                 } catch (Exception ex) {
-                    // TODO Warning
+                	log.warn("Database error: User");
                 }
             }
         }
-        // TODO result must be return if delete Ok
         return result;
     }
 

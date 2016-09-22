@@ -11,8 +11,7 @@ public class IngredientDB  implements IEntity {
 		UPDATE_AMOUNT("UPDATE coffee.Ingredient SET amount=%s WHERE IngredientId =%s;"),
 		UPDATE_BY_FIELD("UPDATE Coffee.Ingredient SET %s = '%s';"),
 		DELETE_BY_ID("DELETE FROM Coffee.Ingredient WHERE IngredientId = '%s';");
-		// DELETE_USER_BY_PARTIAL_LOGIN("DELETE dbo.Users WHERE Login LIKE
-		// '%s%%';");
+
 		private String query;
 
 		private IngredientDBQueries(String query) {
@@ -97,7 +96,6 @@ public class IngredientDB  implements IEntity {
 
 	@Override
 	public Long getId() {
-		// TODO Auto-generated method stub
 		return getIngredientId();
 	}
 

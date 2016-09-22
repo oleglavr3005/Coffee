@@ -4,14 +4,12 @@ public class RecipeDB  implements IEntity {
 
 	public static enum RecipeDBQueries {
 		INSERT("INSERT INTO Coffee.Recipe (drinkId, ingredientId,amount) VALUES (%s, %s, %s);"),
-		// login is a unique identifier
 		GET_BY_ID("SELECT drinkId, ingredientId,amount FROM Coffee.Recipe WHERE RecipeId = '%s' AND  ingredientId= '%s';"), 
 		GET_BY_FIELD("SELECT RecipeId, RecipeName,price FROM Coffee.Recipe WHERE %s = '%s';"), 
 		GET_ALL("SELECT RecipeId, RecipeName,price FROM Coffee.Recipe;"), 
 		UPDATE_BY_FIELD("UPDATE Coffee.Recipe SET %s = '%s';"),
 		DELETE_BY_ID("DELETE Coffee.Recipe WHERE RecipeId = '%s' AND  ingredientId= '%s';");
-		// DELETE_USER_BY_PARTIAL_LOGIN("DELETE dbo.Users WHERE Login LIKE
-		// '%s%%';");
+	
 		private String query;
 
 		private RecipeDBQueries(String query) {

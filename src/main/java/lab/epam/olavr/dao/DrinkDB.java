@@ -5,14 +5,11 @@ public class DrinkDB  implements IEntity {
 
 	public static enum DrinkDBQueries {
 		INSERT("INSERT INTO coffee.drink (drinkId, drinkName,price) VALUES (%s, '%s', %s);"),
-		// login is a unique identifier
 		GET_BY_ID("SELECT drinkId, drinkName,price FROM coffee.drink WHERE drinkId = '%s';"), 
 		GET_BY_FIELD("SELECT drinkId, drinkName,price FROM coffee.drink WHERE %s = '%s';"), 
 		GET_ALL("SELECT drinkId, drinkName,price FROM coffee.drink;"), 
 		UPDATE_BY_FIELD("UPDATE coffee.drink SET %s = '%s';"),
 		DELETE_BY_ID("DELETE coffee.drink WHERE drinkId = '%s';");
-		// DELETE_USER_BY_PARTIAL_LOGIN("DELETE dbo.Users WHERE Login LIKE
-		// '%s%%';");
 		private String query;
 
 		private DrinkDBQueries(String query) {

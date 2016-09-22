@@ -6,12 +6,14 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 import lab.epam.olavr.dao.DrinkDB.DrinkDBQueries;
 import lab.epam.olavr.exception.GeneralCustomException;
 
 public class DrinkDao extends ADao<DrinkDB> {
 	private static volatile DrinkDao instance = null;
-
+	public static final Logger log = Logger.getLogger(DrinkDao.class);  
 	private DrinkDao() {
 		super();
 		init();
@@ -57,7 +59,6 @@ public class DrinkDao extends ADao<DrinkDB> {
 		Map<IngredientDB, Double> totals = new HashMap<>();
 		String query = "SELECT i.ingredientId,SUM(r.amount) FROM coffee.ingredient i,coffee.recipe r "
 				+ "WHERE i.ingredientId=r.ingredientId AND drinkId=%s GROUP BY ingredientId;";
-		String[] queryResult;
 		Long i = -1L;
 		Double total = 0.0;
 		try {
@@ -66,9 +67,7 @@ public class DrinkDao extends ADao<DrinkDB> {
 			if (resultSet.next()) {
 				;
 			} else {
-				throw new GeneralCustomException(String.format(EMPTY_RESULTSET, query));
-				// throw new RuntimeException(String.format(EMPTY_RESULTSET,
-				// query));
+				throw new GeneralCustomException(String.format(EMPTY_RESULTSET, query));	
 			}
 			;
 
@@ -80,29 +79,24 @@ public class DrinkDao extends ADao<DrinkDB> {
 			} while (resultSet.next());
 		} catch (SQLException e) {
 			throw new GeneralCustomException(DATABASE_READING_ERROR, e);
-			// throw new RuntimeException(DATABASE_READING_ERROR, e);
 		} finally {
 			if (resultSet != null) {
 				try {
 					resultSet.close();
 				} catch (Exception ex) {
-					// TODO Warning
+					log.warn("Database error: Drink");
 				}
 			}
 			if (statement != null) {
 				try {
 					statement.close();
 				} catch (Exception ex) {
-					// TODO Warning
+					log.warn("Database error:Drink");
 				}
 			}
 		}
 		return totals;
 	}
 
-	// TODO DELETE Method
-	// public boolean deleteById(Long id) {
-	// return super.deleteById(id);
-	// }
 
 }

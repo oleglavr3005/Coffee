@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import lab.epam.olavr.exception.GeneralCustomException;
 
 public abstract class ADao<TEntity extends IEntity> implements IDao<TEntity> {
@@ -14,18 +16,17 @@ public abstract class ADao<TEntity extends IEntity> implements IDao<TEntity> {
     protected final static String EMPTY_RESULTSET = "Empty ResultSet by Query %s";
     protected final static String DATABASE_READING_ERROR = "Database Reading Error";
     protected final HashMap<String, Enum<?>> sqlQueries;
-    
+    public static final Logger log = Logger.getLogger(ADao.class);  
     protected ADao() {
         this.sqlQueries = new HashMap<String, Enum<?>>();
         init();
     }
     abstract void init();
-    // TODO Use Builder
+    
     protected abstract TEntity createInstance(String[] args);
 
     protected abstract String[] getFields(TEntity entity);
     
-    // TODO Create abstract method init
     
     // Create
     public boolean insert(TEntity entity) {
@@ -35,27 +36,23 @@ public abstract class ADao<TEntity extends IEntity> implements IDao<TEntity> {
         if (query == null) {
             throw new GeneralCustomException(String.format(QUERY_NOT_FOUND,
                     "INSERT"));
-//            throw new RuntimeException(String.format(QUERY_NOT_FOUND,
-//                    "INSERT"));
         }
         try {
             statement = ConnectionUtils.get().getConnection().createStatement();
-            // TODO CHECK!
      
             result = statement.execute(String.format(query, getFields(entity)));
         } catch (SQLException e) {
             throw new GeneralCustomException(DATABASE_READING_ERROR, e);
-//            throw new RuntimeException(DATABASE_READING_ERROR, e);
         } finally {
             if (statement != null) {
                 try {
                     statement.close();
                 } catch (Exception ex) {
-                    // TODO Warning
+                	 log.warn("Database error");
                 }
             }
         }
-        // TODO result must be return if delete Ok
+  
         return result;
     }
 
@@ -70,8 +67,6 @@ public abstract class ADao<TEntity extends IEntity> implements IDao<TEntity> {
         if (query == null) {
             throw new GeneralCustomException(String.format(QUERY_NOT_FOUND,
                     "GET_BY_ID"));
-//            throw new RuntimeException(String.format(QUERY_NOT_FOUND,
-//                    "GET_BY_ID"));
         }
         try {
             statement = ConnectionUtils.get().getConnection().createStatement();
@@ -85,8 +80,7 @@ public abstract class ADao<TEntity extends IEntity> implements IDao<TEntity> {
             } else {
                 throw new GeneralCustomException(String.format(EMPTY_RESULTSET,
                         query));
-//                throw new RuntimeException(String.format(EMPTY_RESULTSET,
-//                        query));
+
             }
         } catch (SQLException e) {
             throw new GeneralCustomException(DATABASE_READING_ERROR, e);
@@ -96,7 +90,7 @@ public abstract class ADao<TEntity extends IEntity> implements IDao<TEntity> {
                 try {
                     resultSet.close();
                 } catch (Exception ex) {
-                    // TODO Warning
+                	 log.warn("Database error");
                 }
             }
             if (statement != null) {
@@ -120,8 +114,6 @@ public abstract class ADao<TEntity extends IEntity> implements IDao<TEntity> {
         if (query == null) {
             throw new GeneralCustomException(String.format(QUERY_NOT_FOUND,
                     "GET_BY_FIELD"));
-//            throw new RuntimeException(String.format(QUERY_NOT_FOUND,
-//                    "GET_BY_FIELD"));
         }
         try {
             statement = ConnectionUtils.get(DataSourceRepository.get().getConnectorMySqlLocalHost()).getConnection().createStatement();
@@ -129,33 +121,30 @@ public abstract class ADao<TEntity extends IEntity> implements IDao<TEntity> {
             while (resultSet.next()) {
                 queryResult = new String[resultSet.getMetaData().getColumnCount()];
                 for (i = 0; i < queryResult.length; i++) {
-                	//System.out.println("\t\t *** queryResult["+i+"]="+resultSet.getString(i+1));
                     queryResult[i] = resultSet.getString(i+1);
                 }
                 all.add(createInstance(queryResult));
             }
         } catch (SQLException e) {
             throw new GeneralCustomException(DATABASE_READING_ERROR, e);
-//            throw new RuntimeException(DATABASE_READING_ERROR, e);
         } finally {
             if (resultSet != null) {
                 try {
                     resultSet.close();
                 } catch (Exception ex) {
-                    // TODO Warning
+                	 log.warn("Database error");
                 }
             }
             if (statement != null) {
                 try {
                     statement.close();
                 } catch (Exception ex) {
-                    // TODO Warning
+                	log.warn("Database error");
                 }
             }
         }
         if (all.isEmpty()) {
             throw new GeneralCustomException(String.format(EMPTY_RESULTSET, query));
-//            throw new RuntimeException(String.format(EMPTY_RESULTSET, query));
         }
         return all;
     }
@@ -170,8 +159,6 @@ public abstract class ADao<TEntity extends IEntity> implements IDao<TEntity> {
         if (query == null) {
             throw new GeneralCustomException(String.format(QUERY_NOT_FOUND,
                     "GET_ALL"));
-//            throw new RuntimeException(String.format(QUERY_NOT_FOUND,
-//                    "GET_ALL"));
         }
         try {
             statement = ConnectionUtils.get(DataSourceRepository.get().getConnectorMySqlLocalHost()).getConnection().createStatement();
@@ -185,20 +172,19 @@ public abstract class ADao<TEntity extends IEntity> implements IDao<TEntity> {
             }
         } catch (SQLException e) {
             throw new GeneralCustomException(DATABASE_READING_ERROR, e);
-//            throw new RuntimeException(DATABASE_READING_ERROR, e);
         } finally {
             if (resultSet != null) {
                 try {
                     resultSet.close();
                 } catch (Exception ex) {
-                    // TODO Warning
+                	log.warn("Database error");
                 }
             }
             if (statement != null) {
                 try {
                     statement.close();
                 } catch (Exception ex) {
-                    // TODO Warning
+                	log.warn("Database error");
                 }
             }
         }
@@ -217,40 +203,32 @@ public abstract class ADao<TEntity extends IEntity> implements IDao<TEntity> {
         if (query == null) {
             throw new GeneralCustomException(String.format(QUERY_NOT_FOUND,
                     "UPDATE_BY_FIELD"));
-//            throw new RuntimeException(String.format(QUERY_NOT_FOUND,
-//                    "UPDATE_BY_FIELD"));
         }
         try {
             statement = ConnectionUtils.get().getConnection().createStatement();
-            // TODO Use statement.executeUpdate
             result = statement.execute(String.format(query, fieldName, text));
         } catch (SQLException e) {
             throw new GeneralCustomException(DATABASE_READING_ERROR, e);
-//            throw new RuntimeException(DATABASE_READING_ERROR, e);
         } finally {
             if (statement != null) {
                 try {
                     statement.close();
                 } catch (Exception ex) {
-                    // TODO Warning
+                	log.warn("Database error");
                 }
             }
         }
-        // TODO result must be return if delete Ok
         return result;
     }
 
     // Delete
     public boolean deleteById(Long id) {
-        //System.out.println("\t\t\tdeleteById DONE");
         boolean result = false;
         Statement statement = null;
         String query = sqlQueries.get("DELETE_BY_ID").toString();
         if (query == null) {
             throw new GeneralCustomException(String.format(QUERY_NOT_FOUND,
                     "DELETE_BY_ID"));
-//            throw new RuntimeException(String.format(QUERY_NOT_FOUND,
-//                    "DELETE_BY_ID"));
         }
         try {
             statement = ConnectionUtils.get().getConnection().createStatement();
@@ -259,17 +237,16 @@ public abstract class ADao<TEntity extends IEntity> implements IDao<TEntity> {
             System.out.println("DAO result : "+result);
         } catch (SQLException e) {
             throw new GeneralCustomException(DATABASE_READING_ERROR, e);
-//            throw new RuntimeException(DATABASE_READING_ERROR, e);
         } finally {
             if (statement != null) {
                 try {
                     statement.close();
                 } catch (Exception ex) {
-                    // TODO Warning
+                	log.warn("Database error");
                 }
             }
         }
-        // TODO result must be return if delete Ok
+    
         return result;
     }
 

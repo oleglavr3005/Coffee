@@ -3,13 +3,15 @@ package lab.epam.olavr.dao;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.log4j.Logger;
+
 import lab.epam.olavr.dao.IngredientDB.IngredientDBQueries;
 import lab.epam.olavr.exception.GeneralCustomException;
 
 
 public class IngredientDao extends ADao<IngredientDB> {
 	private static volatile IngredientDao instance = null;
-
+	public static final Logger log = Logger.getLogger(IngredientDao.class);  
 	private IngredientDao() {
 		super();
 		init();
@@ -63,33 +65,24 @@ public class IngredientDao extends ADao<IngredientDB> {
         if (query == null) {
             throw new GeneralCustomException(String.format(QUERY_NOT_FOUND,
                     "UPDATE_BY_FIELD"));
-//            throw new RuntimeException(String.format(QUERY_NOT_FOUND,
-//                    "UPDATE_BY_FIELD"));
         }
         try {
             statement = ConnectionUtils.get().getConnection().createStatement();
-            // TODO Use statement.executeUpdate
             result = statement.execute(String.format(query,sum, id));
         } catch (SQLException e) {
             throw new GeneralCustomException(DATABASE_READING_ERROR, e);
-//            throw new RuntimeException(DATABASE_READING_ERROR, e);
         } finally {
             if (statement != null) {
                 try {
                     statement.close();
                 } catch (Exception ex) {
-                    // TODO Warning
+                    log.warn("Database error: ingredient");
                 }
             }
         }
-        // TODO result must be return if delete Ok
+       
         return result;
     }
 
-
-	// TODO DELETE Method
-	// public boolean deleteById(Long id) {
-	// return super.deleteById(id);
-	// }
 
 }

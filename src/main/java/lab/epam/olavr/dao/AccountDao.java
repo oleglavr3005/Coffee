@@ -4,12 +4,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.log4j.Logger;
+
 import lab.epam.olavr.dao.AccountDB.AccountDBQueries;
 import lab.epam.olavr.exception.GeneralCustomException;
+import lab.epam.olavr.servlets.AddIngredients;
 
 public class AccountDao extends ADao<AccountDB> {
 	private static volatile AccountDao instance = null;
-
+	public static final Logger log = Logger.getLogger(AccountDao.class);  
 	private AccountDao() {
 		super();
 		init();
@@ -67,25 +70,22 @@ public class AccountDao extends ADao<AccountDB> {
 	            } else {
 	                throw new GeneralCustomException(String.format(EMPTY_RESULTSET,
 	                        query));
-//	                throw new RuntimeException(String.format(EMPTY_RESULTSET,
-//	                        query));
 	            }
 	        } catch (SQLException e) {
 	            throw new GeneralCustomException(DATABASE_READING_ERROR, e);
-//	            throw new RuntimeException(DATABASE_READING_ERROR, e);
 	        } finally {
 	            if (resultSet != null) {
 	                try {
 	                    resultSet.close();
 	                } catch (Exception ex) {
-	                    // TODO Warning
+	                    log.warn("Database error: Account");
 	                }
 	            }
 	            if (statement != null) {
 	                try {
 	                    statement.close();
 	                } catch (Exception ex) {
-	                    // TODO Warning
+	                	 log.warn("Database error: Account");
 	                }
 	            }
 	        }
@@ -99,12 +99,10 @@ public class AccountDao extends ADao<AccountDB> {
         if (query == null) {
             throw new GeneralCustomException(String.format(QUERY_NOT_FOUND,
                     "UPDATE_BY_FIELD"));
-//            throw new RuntimeException(String.format(QUERY_NOT_FOUND,
-//                    "UPDATE_BY_FIELD"));
         }
         try {
             statement = ConnectionUtils.get().getConnection().createStatement();
-            // TODO Use statement.executeUpdate
+          
             result = statement.execute(String.format(query,sum, id));
         } catch (SQLException e) {
             throw new GeneralCustomException(DATABASE_READING_ERROR, e);
@@ -114,11 +112,11 @@ public class AccountDao extends ADao<AccountDB> {
                 try {
                     statement.close();
                 } catch (Exception ex) {
-                    // TODO Warning
+                	 log.warn("Database error: Account");
                 }
             }
         }
-        // TODO result must be return if delete Ok
+   
         return result;
     }
 

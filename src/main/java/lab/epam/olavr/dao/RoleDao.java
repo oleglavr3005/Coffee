@@ -45,11 +45,4 @@ public class RoleDao extends ADao<RoleDB> {
 		return getByFieldName("roleId", id.toString()).get(0);
 	}
 
-
-
-	// TODO DELETE Method
-	// public boolean deleteById(Long id) {
-	// return super.deleteById(id);
-	// }
-
 }

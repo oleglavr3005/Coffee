@@ -28,7 +28,7 @@ public class AddIngredients extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		if (request.getParameter("Coffee")!=null){
-			//System.out.println("lalala");
+		
 		}
 		  request.getRequestDispatcher("/pages/administration.jsp").forward(request, response);
 	}

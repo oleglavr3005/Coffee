@@ -13,8 +13,7 @@ public class UserDB implements IEntity {
 		UPDATE_BY_FIELD("UPDATE coffee.user SET %s = '%s';"),
 		UPDATE_PASSWORD("UPDATE coffee.user SET password = '%s' WHERE login='%s';"),
 		DELETE_BY_ID("DELETE FROM coffee.user WHERE login = '%s';");
-		// DELETE_USER_BY_PARTIAL_LOGIN("DELETE dbo.Users WHERE Login LIKE
-		// '%s%%';");
+		
 		private String query;
 
 		private UserDBQueries(String query) {
@@ -100,7 +99,6 @@ public class UserDB implements IEntity {
 	}
 
 	public Long getId() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

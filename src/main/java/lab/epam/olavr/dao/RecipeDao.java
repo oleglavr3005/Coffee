@@ -57,12 +57,4 @@ public class RecipeDao extends ADao<RecipeDB> {
 		}
 		return null;
 	}
-
-
-
-	// TODO DELETE Method
-	// public boolean deleteById(Long id) {
-	// return super.deleteById(id);
-	// }
-
 }

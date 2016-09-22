@@ -17,35 +17,40 @@ import lab.epam.olavr.dao.AccountDao;
  */
 public class AccountServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static final Logger log = Logger.getLogger(AccountServlet.class);  
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AccountServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	public static final Logger log = Logger.getLogger(AccountServlet.class);
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try{
-		HttpSession session=request.getSession();
-		Double amount=AccountDao.get().getByFieldName("user", session.getAttribute("login").toString()).get(0).getAmount();
-		request.setAttribute("currentAmount",amount);
-		request.getRequestDispatcher("/pages/account.jsp").forward(request, response);
-		}
-		catch (Exception e) {
+	public AccountServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
+			HttpSession session = request.getSession();
+			Double amount = AccountDao.get().getByFieldName("user", session.getAttribute("login").toString()).get(0)
+					.getAmount();
+			request.setAttribute("currentAmount", amount);
+			request.getRequestDispatcher("/pages/account.jsp").forward(request, response);
+		} catch (Exception e) {
 			request.getRequestDispatcher("/pages/error.jsp").forward(request, response);
 			log.error(e.getMessage());
 		}
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

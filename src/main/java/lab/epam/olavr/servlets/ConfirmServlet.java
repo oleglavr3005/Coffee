@@ -29,6 +29,7 @@ import lab.epam.olavr.service.OrderService;
 public class ConfirmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final Logger log = Logger.getLogger(ConfirmServlet.class);
+
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -43,49 +44,52 @@ public class ConfirmServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		try{
-		HttpSession session = request.getSession(false);
-		List<DrinkDB> drinks = DrinkDao.get().getAll();
-		List<IngredientDB> ingredients = IngredientDao.get().getAll();
-		ingredients.remove(0);
-		ingredients.remove(0);
-		String drink=request.getParameter("drink");
-		System.out.println(drink);
-		DrinkDB selectedDrink= DrinkDao.get().getByFieldName("drinkName", drink).get(0);
-		List<String> ingredientsAmount=new ArrayList<>();
-		for (IngredientDB ingr:ingredients){
-			ingredientsAmount.add(request.getParameter(ingr.getIngredientName()));
-		}
-		
-		System.out.println(drink);
-		System.out.println(ingredientsAmount);
-		Order order=new Order(UserDao.get().getByFieldName("login", session.getAttribute("login").toString()).get(0),selectedDrink,ingredients,ingredientsAmount);
-		Double totalPrice=OrderService.getValue(order);
-		
-		//ingredients = IngredientDao.get().getAll();
-		Map<IngredientDB, Double>totalExpenses=OrderService.calcExpenses(order);
-		//Long id=AccountDao.get().getByFieldName("login", session.getAttribute("login").toString()).get(0).getAccountId();
-		Boolean isSumOnAccount=totalPrice<=AccountDao.get().getByFieldName("user", session.getAttribute("login").toString()).get(0).getAmount();
-		Boolean isIngredients=true;
-		List<IngredientDB>ingredientsAll = IngredientDao.get().getAll();
-		for (IngredientDB ingr:ingredients){
-			if(ingr.getAmount()<totalExpenses.get(ingr)){
-				isIngredients=false;
-				break;
+		try {
+			HttpSession session = request.getSession(false);
+			List<DrinkDB> drinks = DrinkDao.get().getAll();
+			List<IngredientDB> ingredients = IngredientDao.get().getAll();
+			ingredients.remove(0);
+			ingredients.remove(0);
+			String drink = request.getParameter("drink");
+			System.out.println(drink);
+			DrinkDB selectedDrink = DrinkDao.get().getByFieldName("drinkName", drink).get(0);
+			List<String> ingredientsAmount = new ArrayList<>();
+			for (IngredientDB ingr : ingredients) {
+				ingredientsAmount.add(request.getParameter(ingr.getIngredientName()));
 			}
-		}
-		if ( isSumOnAccount && isIngredients){
-			OrderService.finishOrder(order);
-		}
-		request.setAttribute("drinks", drinks);
-		request.setAttribute("ingredients", ingredients);
-		request.setAttribute("isOrdered", "true");
-		request.setAttribute("totalPrice", totalPrice);
-		request.setAttribute("isSumOnAccount", isSumOnAccount);
-		request.setAttribute("isIngredients", isIngredients);
-		request.getRequestDispatcher("/pages/menu.jsp").forward(request, response);
-	}
-		catch (Exception e) {
+
+			System.out.println(drink);
+			System.out.println(ingredientsAmount);
+			Order order = new Order(
+					UserDao.get().getByFieldName("login", session.getAttribute("login").toString()).get(0),
+					selectedDrink, ingredients, ingredientsAmount);
+			Double totalPrice = OrderService.getValue(order);
+
+			// ingredients = IngredientDao.get().getAll();
+			Map<IngredientDB, Double> totalExpenses = OrderService.calcExpenses(order);
+			// Long id=AccountDao.get().getByFieldName("login",
+			// session.getAttribute("login").toString()).get(0).getAccountId();
+			Boolean isSumOnAccount = totalPrice <= AccountDao.get()
+					.getByFieldName("user", session.getAttribute("login").toString()).get(0).getAmount();
+			Boolean isIngredients = true;
+			List<IngredientDB> ingredientsAll = IngredientDao.get().getAll();
+			for (IngredientDB ingr : ingredients) {
+				if (ingr.getAmount() < totalExpenses.get(ingr)) {
+					isIngredients = false;
+					break;
+				}
+			}
+			if (isSumOnAccount && isIngredients) {
+				OrderService.finishOrder(order);
+			}
+			request.setAttribute("drinks", drinks);
+			request.setAttribute("ingredients", ingredients);
+			request.setAttribute("isOrdered", "true");
+			request.setAttribute("totalPrice", totalPrice);
+			request.setAttribute("isSumOnAccount", isSumOnAccount);
+			request.setAttribute("isIngredients", isIngredients);
+			request.getRequestDispatcher("/pages/menu.jsp").forward(request, response);
+		} catch (Exception e) {
 			request.getRequestDispatcher("/pages/error.jsp").forward(request, response);
 			log.error(e.getMessage());
 		}

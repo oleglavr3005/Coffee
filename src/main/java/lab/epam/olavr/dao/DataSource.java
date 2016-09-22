@@ -8,7 +8,7 @@ public final class DataSource {
     private String username;
     private String password;
 
-    // TODO Create Factory, Builder
+
     public DataSource(Driver jdbcDriver, String connectionUrl, String username, String password) {
         this.jdbcDriver = jdbcDriver;
         this.connectionUrl = connectionUrl;

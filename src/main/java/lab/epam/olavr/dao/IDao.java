@@ -12,8 +12,6 @@ public interface IDao<TEntity> {
 
     List<TEntity> getByFieldName(String fieldName, String text);
 
-    // TEntity getByFieldName(String fieldName, Long value);
-
     List<TEntity> getAll();
 
     // Update

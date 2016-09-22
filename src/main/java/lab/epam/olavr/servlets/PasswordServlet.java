@@ -21,13 +21,13 @@ import lab.epam.olavr.service.Validator;
 /**
  * Servlet implementation class PasswordSevlet
  */
-public class PasswordSevlet extends HttpServlet {
+public class PasswordServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public PasswordSevlet() {
+	public PasswordServlet() {
 		super();
 
 	}
@@ -50,12 +50,13 @@ public class PasswordSevlet extends HttpServlet {
 					request.setAttribute("message", "invalid email");
 					request.getRequestDispatcher("/pages/password.jsp").forward(request, response);
 				} else {
-					String password=PasswordService.createPassword();
+					String password = PasswordService.createPassword();
 					MailService.generateAndSendEmail(email, "New password (Coffee Machine)",
 							"Your new password is " + password);
-					UserDB user= UserDao.get().getByFieldName("login", login).get(0);
-				
-					UserDao.get().updatePassword(login, Security.get_SHA_1_SecurePassword(password, login.getBytes(Charset.forName("UTF-8"))));
+					UserDB user = UserDao.get().getByFieldName("login", login).get(0);
+
+					UserDao.get().updatePassword(login,
+							Security.get_SHA_1_SecurePassword(password, login.getBytes(Charset.forName("UTF-8"))));
 					request.setAttribute("message", "new password is sent");
 				}
 			}
