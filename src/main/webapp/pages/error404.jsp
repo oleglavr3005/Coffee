@@ -14,7 +14,7 @@
   <%@ include file="header.jsp" %>
   <div style="height:200px; padding:100px;">
  
-  <h1 style="color:red;">We are sorry but an unexpected error happened.</h1>
+  <h1 style="color:red; padding-left:200px">Page not found</h1>
   </div>
    <%@ include file="footer.jsp" %>
    			</div>
