@@ -46,6 +46,10 @@
 			<%@ include file="footer.jsp"%>
 		</div>
 	</div>
-
+  <script>
+	$(document).ready(function() {
+		$('#header ul li:nth-child(4)').addClass('current');
+	});
+</script>
 </body>
 </html>

@@ -142,4 +142,9 @@
 		</div>
 	</c:if>
 </body>
+<script>
+	$(document).ready(function() {
+		$('#header ul li:nth-child(2)').addClass('current');
+	});
+</script>
 </html>
