@@ -22,9 +22,7 @@
 			<a href="administration">${lang[admin]}</a>
 		</my:access>
 		<c:if test="${sessionScope.role != null}">
-			<c:if test="${sessionScope.role != ''}">${sessionScope.role.length()}
 		${welcomeMessage}<a href="<%=request.getContextPath()%>/logout ">${lang.logout}</a>
-			</c:if>
 		</c:if>
 	</div>
 

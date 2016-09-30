@@ -30,6 +30,7 @@ import lab.epam.olavr.service.Validator;
 public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final Logger log = Logger.getLogger(RegistrationServlet.class);
+
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -80,16 +81,18 @@ public class RegistrationServlet extends HttpServlet {
 				AccountDao.get().insert(new AccountDB(accId, 0.0, login));
 				UserDao.get()
 						.insert(new UserDB(login,
-								Security.get_SHA_1_SecurePassword(password, login.getBytes(Charset.forName("UTF-8"))), name,
-								surname, email, 1L));
-				request.setAttribute("errormsg", "errorAfterRegister");
+								Security.get_SHA_1_SecurePassword(password, login.getBytes(Charset.forName("UTF-8"))),
+								name, surname, email, 1L));
+
 				HttpSession session = request.getSession(true);
 				session.setAttribute("login", login);
 				session.setAttribute("role", "user");
 				session.setAttribute("logout", "Log out");
 				request.setAttribute("welcomeMessage", "Hello " + login);
-				MailService.generateAndSendEmail(email,"Greetings from Coffee Machine..","You were registered at Coffee Machine ");
-			//	request.getRequestDispatcher("/pages/index.jsp").forward(request, response);
+				MailService.generateAndSendEmail(email, "Greetings from Coffee Machine..",
+						"You were registered at Coffee Machine ");
+				// request.getRequestDispatcher("/pages/index.jsp").forward(request,
+				// response);
 			}
 		} catch (GeneralCustomException | MessagingException e) {
 			request.getRequestDispatcher("/pages/error.jsp").forward(request, response);
@@ -101,6 +104,7 @@ public class RegistrationServlet extends HttpServlet {
 			request.setAttribute("errormsg", "password error");
 		if (!newUser)
 			request.setAttribute("errormsg", "Such user already exists");
+	
 		request.setAttribute("name", name);
 		request.setAttribute("surname", surname);
 		request.setAttribute("email", email);
@@ -118,5 +122,4 @@ public class RegistrationServlet extends HttpServlet {
 		doGet(request, response);
 	}
 
-	
 }

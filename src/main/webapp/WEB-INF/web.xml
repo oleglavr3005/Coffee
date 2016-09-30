@@ -109,10 +109,11 @@
 		<url-pattern>/password</url-pattern>
 	</servlet-mapping>
 	<error-page>
+		
+			<error-code>500</error-code>
+		<location>/pages/error.jsp</location>
 		<error-code>404</error-code>
 		<location>/pages/error404.jsp</location>
-		<exception-type>java.lang.Throwable</exception-type>
-		<location>/error.jsp</location>
 	</error-page>
 	<location>/pages/error.jsp</location>
 </web-app>
