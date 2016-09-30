@@ -8,7 +8,7 @@
 	</div>
 	<div class="section">
 		<ul>
-			<li class="current"><a href="<%=request.getContextPath()%>/pages/index.jsp">${lang.home}</a></li>
+			<li><a href="<%=request.getContextPath()%>/pages/index.jsp">${lang.home}</a></li>
 			<li><a href="<%=request.getContextPath()%>/menu">${lang.menu}</a></li>
 			<li><a href="<%=request.getContextPath()%>/registration">${lang.register}</a></li>
 			<li><a href="<%=request.getContextPath()%>/pages/about.jsp">${lang.about}</a></li>

@@ -98,6 +98,7 @@
 <script>
 	$(document).ready(function() {
 		$('#header ul li:nth-child(1)').addClass('current');
+		$('#footer ul li:nth-child(1)').addClass('current');
 	});
 </script>
 </html>

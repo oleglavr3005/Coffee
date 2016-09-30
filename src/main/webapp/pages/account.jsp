@@ -49,6 +49,7 @@
   <script>
 	$(document).ready(function() {
 		$('#header ul li:nth-child(4)').addClass('current');
+		$('#footer ul li:nth-child(4)').addClass('current');
 	});
 </script>
 </body>
