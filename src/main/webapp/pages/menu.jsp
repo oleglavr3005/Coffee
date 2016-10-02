@@ -19,7 +19,6 @@
 	var basePrice = 0;
 	var drinkName = "";
 	function calcPrice() {
-
 		var s = "0";
 		var arrIngr = [];
 		var arrPr = [];
