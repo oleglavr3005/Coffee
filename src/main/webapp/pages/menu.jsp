@@ -46,7 +46,6 @@
 			$(obj).val(0);
 		});
 	}
-
 	function addDrink(event) {
 		$('<input />').attr('type', 'hidden').attr('name', 'drink').attr(
 				'value', drinkName).appendTo('#form');
@@ -136,7 +135,6 @@
 						</div>
 					</form>
 				</div>
-
 
 			</div>
 		</div>
