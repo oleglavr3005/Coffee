@@ -128,7 +128,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
 		aria-labelledby="ModalLabel" aria-hidden="true"
 		data-backdrop="static">
@@ -146,5 +145,4 @@
 		</div>
 	</div>
 </body>
-
 </html>
