@@ -22,7 +22,7 @@ import lab.epam.olavr.service.Validator;
  * Servlet implementation class PasswordSevlet
  */
 public class PasswordServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 4665L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
