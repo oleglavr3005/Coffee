@@ -27,7 +27,7 @@ import lab.epam.olavr.service.OrderService;
  * Servlet implementation class ConfirmServlet
  */
 public class ConfirmServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 6705L;
 	public static final Logger log = Logger.getLogger(ConfirmServlet.class);
 
 	/**
