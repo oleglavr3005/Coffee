@@ -19,6 +19,7 @@ import lab.epam.olavr.service.OrderService;
 public class AddMoneyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final Logger log = Logger.getLogger(AddMoneyServlet.class);
+
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -40,17 +41,17 @@ public class AddMoneyServlet extends HttpServlet {
 			session = request.getSession();
 			AccountDB acc = AccountDao.get().getByFieldName("user", session.getAttribute("login").toString()).get(0);
 			amount = acc.getAmount();
-
 			Long id = acc.getAccountId();
 			AccountDao.get().updateAmount(amount + addMoney, id);
-			amount=AccountDao.get().getByFieldName("user", session.getAttribute("login").toString()).get(0).getAmount();
-			request.setAttribute("currentAmount",amount);
+			amount = AccountDao.get().getByFieldName("user", session.getAttribute("login").toString()).get(0)
+					.getAmount();
+			request.setAttribute("currentAmount", amount);
 			request.getRequestDispatcher("/pages/account.jsp").forward(request, response);
 		} catch (Exception e) {
 			request.getRequestDispatcher("/pages/error.jsp").forward(request, response);
 			log.error(e.getMessage());
 		}
-		
+
 	}
 
 	/**
