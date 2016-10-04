@@ -1,6 +1,5 @@
 package lab.epam.olavr.service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,8 +10,6 @@ import lab.epam.olavr.dao.DrinkDB;
 import lab.epam.olavr.dao.DrinkDao;
 import lab.epam.olavr.dao.IngredientDB;
 import lab.epam.olavr.dao.IngredientDao;
-import lab.epam.olavr.dao.UserDao;
-import lab.epam.olavr.model.Ingredient;
 import lab.epam.olavr.model.Order;
 
 //TODO class order drink+Ingredients 
