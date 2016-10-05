@@ -30,16 +30,16 @@
 	}
 </script>
 <style>
-div.container {
-  display: none; } 
+/* div.container { */
+/*   display: none; }  */
 
-div:target {
-  display: block; }
+/* div:target { */
+/*   display: block; } */
 
-div[id*=t]:target ~ #users {
-  display: none; }
-div[id*=tab]:target ~ #ingrs {
-  display: block; }
+/* div[id*=t]:target ~ #users { */
+/*   display: none; } */
+/* div[id*=tab]:target ~ #ingrs { */
+/*   display: block; } */
 </style>
 </head>
 <body>
@@ -49,12 +49,12 @@ div[id*=tab]:target ~ #ingrs {
 			<div>
 				<jsp:directive.include file="header.jsp" />
 				<div class="container">
-					<div id="tab/ingrs"></div>
-					<div id="tab/users"></div>
-					<div id="tab">
-						<a href="#users">#users</a><b><a href="#tab/ingrs">#ingrs</a></b>
+					<!-- 					<div id="tab/ingrs"></div> -->
+					<!-- 					<div id="tab/users"></div> -->
+					<!-- 					<div id="tab"> -->
+					<!-- 						<a href="#users">#users</a><b><a href="#tab/ingrs">#ingrs</a></b> -->
 
-					</div>
+					<!-- 					</div> -->
 					<div id="ingrs">
 						<form action="<%=request.getContextPath()%>/administration"
 							method="post" id="form" onsubmit="addAttr()">
@@ -85,9 +85,9 @@ div[id*=tab]:target ~ #ingrs {
 							<div style="color: red; align: center">${message}</div>
 						</form>
 					</div>
-					
-					
-						<div id="users">
+
+
+					<div id="users">
 						<form action="<%=request.getContextPath()%>/administration"
 							method="post" id="form" onsubmit="addAttr()">
 
@@ -117,10 +117,10 @@ div[id*=tab]:target ~ #ingrs {
 							<div style="color: red; align: center">${message}</div>
 						</form>
 					</div>
-					
 				</div>
 			</div>
-			<script type="text/javascript">
+		</div>
+		<script type="text/javascript">
 				// For demo to fit into DataTables site builder...
 				$('#ingredients').removeClass('display').addClass(
 						'table table-striped table-bordered');
