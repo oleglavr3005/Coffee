@@ -41,6 +41,7 @@
 /* div[id*=tab]:target ~ #ingrs { */
 /*   display: block; } */
 </style>
+
 </head>
 <body>
 	<c:if test="${role==2 }">
@@ -58,7 +59,6 @@
 					<div id="ingrs">
 						<form action="<%=request.getContextPath()%>/administration"
 							method="post" id="form" onsubmit="addAttr()">
-
 							<table class="display" cellspacing="0" width="100%"
 								id="ingredients">
 								<thead align="left">
