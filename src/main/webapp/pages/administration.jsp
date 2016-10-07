@@ -46,7 +46,6 @@
 <body>
 	<c:if test="${role==2 }">
 		<div id="page">
-
 			<div>
 				<jsp:directive.include file="header.jsp" />
 				<div class="container">
@@ -85,8 +84,6 @@
 							<div style="color: red; align: center">${message}</div>
 						</form>
 					</div>
-
-
 					<div id="users">
 						<form action="<%=request.getContextPath()%>/administration"
 							method="post" id="form" onsubmit="addAttr()">
