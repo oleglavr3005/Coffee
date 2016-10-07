@@ -49,12 +49,12 @@
 			<div>
 				<jsp:directive.include file="header.jsp" />
 				<div class="container">
-					<!-- 					<div id="tab/ingrs"></div> -->
-					<!-- 					<div id="tab/users"></div> -->
-					<!-- 					<div id="tab"> -->
-					<!-- 						<a href="#users">#users</a><b><a href="#tab/ingrs">#ingrs</a></b> -->
+					<div id="tab/ingrs"></div>
+					<div id="tab/users"></div>
+					<div id="tab">
+						<a href="#users">#users</a><b><a href="#tab/ingrs">#ingrs</a></b>
 
-					<!-- 					</div> -->
+					</div>
 					<div id="ingrs">
 						<form action="<%=request.getContextPath()%>/administration"
 							method="post" id="form" onsubmit="addAttr()">
@@ -118,10 +118,10 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-				// For demo to fit into DataTables site builder...
-				$('#ingredients').removeClass('display').addClass(
-						'table table-striped table-bordered');
-			</script>
+			// For demo to fit into DataTables site builder...
+			$('#ingredients').removeClass('display').addClass(
+					'table table-striped table-bordered');
+		</script>
 	</c:if>
 </body>
 </html>
