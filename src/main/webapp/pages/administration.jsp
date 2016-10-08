@@ -30,16 +30,15 @@
 	}
 </script>
 <style>
-/* div.container { */
-/*   display: none; }  */
 
-/* div:target { */
-/*   display: block; } */
 
-/* div[id*=t]:target ~ #users { */
-/*   display: none; } */
-/* div[id*=tab]:target ~ #ingrs { */
-/*   display: block; } */
+ div:target { 
+  display: block; } 
+
+div[id*=t]:target ~ #users { 
+  display: none; } 
+div[id*=tab]:target ~ #ingrs {
+  display: block; } 
 </style>
 
 </head>
@@ -51,11 +50,13 @@
 				<div class="container">
 					<div id="tab/ingrs"></div>
 					<div id="tab/users"></div>
-					<div id="tab">
-						<a href="#users">#users</a><b><a href="#tab/ingrs">#ingrs</a></b>
-
-					</div>
 					<div id="ingrs">
+						<a href="#users">#users</a><b><a href="#tab/ingrs">#ingrs</a></b>
+					</div>
+					<div id="users">
+						<b><a href="#users">#users</a></b><a href="#tab/ingrs">#ingrs</a>
+					</div>
+					<div id="tab/ingrs">
 						<form action="<%=request.getContextPath()%>/administration"
 							method="post" id="form" onsubmit="addAttr()">
 							<table class="display" cellspacing="0" width="100%"
@@ -84,7 +85,7 @@
 							<div style="color: red; align: center">${message}</div>
 						</form>
 					</div>
-					<div id="users">
+					<div id="tab/users">
 						<form action="<%=request.getContextPath()%>/administration"
 							method="post" id="form" onsubmit="addAttr()">
 
