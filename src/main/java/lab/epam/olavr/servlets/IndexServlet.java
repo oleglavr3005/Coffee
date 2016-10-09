@@ -53,8 +53,6 @@ public class IndexServlet extends HttpServlet {
 		String login = request.getParameter("login");
 		String pass = request.getParameter("password");
 		UserDB user;
-		// UserDB
-		// user=UserDao.get(ConnectionUtils.get(DataSourceRepository.get().getConnectorMySqlLocalHost()).getByFieldName("login",login)).get(0);
 		try {
 			System.out.println(Security.get_SHA_1_SecurePassword(pass, login.getBytes(Charset.forName("UTF-8"))));
 			if (UserDao.get().existsUser(login)) {
