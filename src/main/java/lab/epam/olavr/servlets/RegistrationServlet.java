@@ -83,7 +83,6 @@ public class RegistrationServlet extends HttpServlet {
 						.insert(new UserDB(login,
 								Security.get_SHA_1_SecurePassword(password, login.getBytes(Charset.forName("UTF-8"))),
 								name, surname, email, 1L));
-
 				HttpSession session = request.getSession(true);
 				session.setAttribute("login", login);
 				session.setAttribute("role", "user");
