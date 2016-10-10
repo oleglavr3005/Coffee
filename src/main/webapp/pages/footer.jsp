@@ -20,8 +20,7 @@
 				</form>
 			</li>
 			<li>
-				<form method=get"
-					action="<%=request.getContextPath()%>/pages/changelang">
+				<form method="get" action="<%=request.getContextPath()%>/pages/changelang">
 					<input type="hidden" name="language" value="uk"> <input
 						class="button16" type="submit" value="Ukrainian">
 				</form>
