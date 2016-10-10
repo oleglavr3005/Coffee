@@ -88,12 +88,11 @@ div[id*=tab]:target ~ #ingrs {
 					<div id="tab/users">
 						<form action="<%=request.getContextPath()%>/administration"
 							method="post" id="form" onsubmit="addAttr()">
-
 							<table class="display" cellspacing="0" width="100%"
 								id="ingredients">
 								<thead align="left">
 									<tr>
-										<th align="left">NAME</th>
+										<th align="left">Name</th>
 										<th align="left">Amount</th>
 										<th align="left">MaxAmount</th>
 										<th align="left">NewAmount</th>
