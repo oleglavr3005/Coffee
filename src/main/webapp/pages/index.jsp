@@ -84,11 +84,9 @@
 								class="btn btn-success" role="button">${lang.register}</a> <a
 								href="<%=request.getContextPath()%>/pages/password.jsp"
 								class="forgot-password">${lang.forget} </a>
-
 							<p>${lang[error]}</p>
 						</form>
 					</div>
-
 				</div>
 			</div>
 			<jsp:directive.include file="footer.jsp" />
