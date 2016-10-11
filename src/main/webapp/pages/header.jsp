@@ -12,8 +12,8 @@
 			href="<%=request.getContextPath()%>/pages/registration.jsp">${lang.register}</a>
 		</li>
 		<c:if test="${sessionScope.role != null}">
-			<li><a href="<%=request.getContextPath()%>/account">${lang.account}</a>
-			</li>
+			 <li><a href="<%=request.getContextPath()%>/account">${lang.account}</a>
+			 </li>
 		</c:if>
 		<li><a href="<%=request.getContextPath()%>/pages/about.jsp">${lang.about}</a></li>
 	</ul>
