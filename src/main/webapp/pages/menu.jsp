@@ -89,7 +89,6 @@
 						</ul>
 					</div>
 				</div>
-
 			</div>
 			<jsp:directive.include file="footer.jsp" />
 		</div>
@@ -106,7 +105,7 @@
 						method="get">
 						<h3 style="margin-left: 30px;">Ingredients:</h3>
 						<table id="order"
-							style="margin-left: 30px; border-spacing: 5px 2px">
+							style="margin-left: 30px; border-spacing: 6px 2px">
 							<c:forEach var="ingr" items="${ingredients}">
 								<tr>
 									<td style="width: 90px;">${ingr.ingredientName}</td>
