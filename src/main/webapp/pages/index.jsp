@@ -75,8 +75,6 @@
 								} size="30" autocomplete="on" /> <label><input
 								type="checkbox" id="_spring_security_remember_me" value="true"
 								name="_spring_security_remember_me"> ${lang.remember}</label>
-
-
 							<button type="submit" class="btn btn-primary"
 								style="width: 88px;">${lang.submit}</button>
 
