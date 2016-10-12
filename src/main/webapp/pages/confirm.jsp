@@ -28,7 +28,6 @@
 						alt="Image"> <span>Unique aroma of coffee...</span>
 				</div>
 
-
 				<div id="div1">
 					<a href="menu.html" class="whatshot">What&#39;s Hot</a>
 					<div>
