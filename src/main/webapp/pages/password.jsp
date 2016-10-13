@@ -7,8 +7,7 @@
 <meta charset="UTF-8">
 <title>Yay&#39;Koffee Website Template</title>
 <link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/style.css">
-	
+	href="<%=request.getContextPath()%>/css/style.css">	
 </style>
 </head>
 <body>
@@ -74,7 +73,6 @@
 							<input class="form-control" id="email" name="email"
 								type="email" value="" placeholder=email size="30"
 								autocomplete="on" />
-
 
 							<button type="submit" class="btn btn-primary"
 								style="width: 88px;">${lang.submit}</button>
