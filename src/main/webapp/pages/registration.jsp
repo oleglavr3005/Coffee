@@ -26,7 +26,6 @@
                 <p><input type='text' name='surname' value='${surname}' placeholder='surname'/></p>
                 <p><input type='text' name='email' value='${email}' placeholder='$email'/>${lang[emailErr]}</p>
                 <p><input class="btn btn-default"  type='submit' value='Submit'></p>
-
                  <p class="info">${errormsg}</p>
               </form>
              </div>
