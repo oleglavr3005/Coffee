@@ -61,7 +61,7 @@
 						<p class="order">
 							${lang.youOrdered}: ${lang[drink.title]}
 							<c:forEach var="ingr" items="${drink.ingrs}">
-								<c:if test="${ingr.amount > 0}">
+								<c:if test="${ingr.amount>0}">
 									<br>
                         ${lang.with} ${ingr.amount}${lang.grOf} ${lang[ingr.title]} 
                     </c:if>
