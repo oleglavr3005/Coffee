@@ -73,14 +73,12 @@
 							<input class="form-control" id="email" name="email"
 								type="email" value="" placeholder=email size="30"
 								autocomplete="on" />
-
 							<button type="submit" class="btn btn-primary"
 								style="width: 88px;">${lang.submit}</button>
 								<p>${message}</p>
 								<p>${lang[error]}</p>
 						</form>
 					</div>
-
 				</div>
 			</div>
 				<jsp:directive.include file="footer.jsp" />
