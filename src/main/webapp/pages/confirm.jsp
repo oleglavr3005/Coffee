@@ -119,7 +119,7 @@
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-body">
-					<p>Purchase is canceled!</p>
+					<p>Purchase is cancelled!</p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
