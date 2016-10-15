@@ -77,7 +77,6 @@
 								name="_spring_security_remember_me"> ${lang.remember}</label>
 							<button type="submit" class="btn btn-primary"
 								style="width: 88px;">${lang.submit}</button>
-
 							<a href="<%=request.getContextPath()%>/registration"
 								class="btn btn-success" role="button">${lang.register}</a> <a
 								href="<%=request.getContextPath()%>/pages/password.jsp"
