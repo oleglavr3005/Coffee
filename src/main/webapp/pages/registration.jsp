@@ -15,8 +15,7 @@
         <%@ include file="header.jsp" %>
          <div id="body">
            <div class="section">
-            <div id="form" style="height:480px">
-             
+            <div id="form" style="height:480px">     
                <form id="registrationForm" style="position: absolute; top: 500px; left:500px" method="POST" action="<%=request.getContextPath()%>/registration">
                <label>Registration Form</label><br>
                 <p><input type='text' name='login' value='${login}' placeholder='Login'/></p>
@@ -39,6 +38,7 @@
 	$(document).ready(function() {
 		$('#header ul li:nth-child(3)').addClass('current');
 		$('#footer ul li:nth-child(3)').addClass('current');
+	//	$('#footer ul li:nth-child(2)').addClass('current');
 	});
 </script>
 </html>
