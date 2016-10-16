@@ -43,10 +43,10 @@ div[id*=tab]:target ~ #ingrs {
 
 </head>
 <body>
-	<c:if test="${role==2 }">
+	<c:if test="${role==2}">
 		<div id="page">
 			<div>
-				<jsp:directive.include file="header.jsp" />
+				<jsp:directive.include file="header.jsp"/>
 				<div class="container">
 					<div id="tab/ingrs"></div>
 					<div id="tab/users"></div>
