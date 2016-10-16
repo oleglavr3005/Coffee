@@ -8,8 +8,8 @@
 	<ul>
 		<li><a href="<%=request.getContextPath()%>/pages/index.jsp">${lang.home}</a></li>
 		<li><a href="<%=request.getContextPath()%>/menu">${lang.menu}</a></li>
-		<li><a
-			href="<%=request.getContextPath()%>/pages/registration.jsp">${lang.register}</a>
+		<li>
+		<a href="<%=request.getContextPath()%>/pages/registration.jsp">${lang.register}</a>
 		</li>
 		<c:if test="${sessionScope.role != null}">
 			 <li><a href="<%=request.getContextPath()%>/account">${lang.account}</a>
