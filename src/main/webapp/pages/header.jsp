@@ -3,8 +3,8 @@
 
 
 <div id="header">
-	<a href="<%=request.getContextPath()%>/pages/index.jsp"><img
-		src="<%=request.getContextPath()%>/images/logo.png" alt="Image"></a>
+	<a href="<%=request.getContextPath()%>/pages/index.jsp">
+	<img src="<%=request.getContextPath()%>/images/logo.png" alt="Image"></a>
 	<ul>
 		<li><a href="<%=request.getContextPath()%>/pages/index.jsp">${lang.home}</a></li>
 		<li><a href="<%=request.getContextPath()%>/menu">${lang.menu}</a></li>
