@@ -54,7 +54,7 @@ div[id*=tab]:target ~ #ingrs {
 						<a href="#users">#users</a><b><a href="#tab/ingrs">#ingrs</a></b>
 					</div>
 					<div id="users">
-						<b><a href="#users">#users</a></b><a href="#tab/ingrs">#ingrs</a>
+					   <b><a href="#users">#users</a></b><a href="#tab/ingrs">#ingrs</a>
 					</div>
 					<div id="tab/ingrs">
 						<form action="<%=request.getContextPath()%>/administration"
