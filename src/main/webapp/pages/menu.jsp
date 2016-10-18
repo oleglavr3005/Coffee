@@ -98,7 +98,6 @@
 			aria-labelledby="ModalLabel" aria-hidden="true"
 			data-backdrop="static">
 			<div class="modal-dialog">
-
 				<div class="modal-content">
 					<form id="form" action="<%=request.getContextPath()%>/confirm"
 						onsubmit="addDrink()" class="form-horizontal" role="form"
