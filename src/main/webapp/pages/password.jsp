@@ -60,8 +60,7 @@
 					</ul>
 					<div id="form">
 
-						<h3>Password renewal</h3>
-					
+						<h3>Password renewal</h3>				
 						<form id="passwordForm" name="passwordForm"
 							action="http://localhost:8080/EpamMarkTask4/password" method="POST">
 
