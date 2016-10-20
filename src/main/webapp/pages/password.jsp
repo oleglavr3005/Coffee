@@ -63,7 +63,6 @@
 						<h3>Password renewal</h3>				
 						<form id="passwordForm" name="passwordForm"
 							action="http://localhost:8080/EpamMarkTask4/password" method="POST">
-
 							<label for="login">${lang.login}</label> <input class="form-control"
 								id="login" name="login" type="text" value=""
 								placeholder=${lang.login} size="30" autocomplete="on"
