@@ -33,7 +33,6 @@
 					<div>
 						<ul>
 							<c:forEach var="drink" items="${drinks}" varStatus="loop">
-
 								<li><c:choose>
 										<c:when test="${loop.index % 3 == 1}">
 											<img src="<%=request.getContextPath()%>/images/coffee1.jpg"
