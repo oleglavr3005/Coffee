@@ -31,8 +31,7 @@
 									 <label   for="addMoney" style="color: green"><br>Enter sum to add </label>
 								<p>
 									<input class="form-control" type='number' name='addMoney' value='0' />
-								</p>
-								
+								</p>								
 								<p>
 									<input class="btn btn-default" type='submit' value='Submit'>
 								</p>
