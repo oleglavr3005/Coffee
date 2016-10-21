@@ -72,7 +72,7 @@
 								type="email" value="" placeholder=email size="30"
 								autocomplete="on" />
 							<button type="submit" class="btn btn-primary"
-								style="width: 88px;">${lang.submit}</button>
+								style="width: 87px;">${lang.submit}</button>
 								<p>${message}</p>
 								<p>${lang[error]}</p>
 						</form>
