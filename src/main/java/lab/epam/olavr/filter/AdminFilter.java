@@ -38,8 +38,8 @@ public class AdminFilter implements Filter {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
 		HttpSession session = request.getSession(false);
-		if ((session==null)||!((Long)session.getAttribute("role")==2L)) {
-			response.sendRedirect(request.getContextPath()+""); 
+		if ((session == null) || !((Long) session.getAttribute("role") == 2L)) {
+			response.sendRedirect(request.getContextPath() + "");
 		} else {
 			chain.doFilter(req, res); // Logged-in user found, so just continue
 										// request.
