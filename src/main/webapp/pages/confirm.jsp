@@ -42,7 +42,7 @@
 											<img src="<%=request.getContextPath()%>/images/coffee2.jpg"
 												alt="Image">
 										</c:when>
-										<c:when test="${loop.index % 3== 0}">
+										<c:when test="${loop.index % 3 == 0}">
 											<img src="<%=request.getContextPath()%>/images/coffee3.jpg"
 												alt="Image">
 										</c:when>
