@@ -54,13 +54,12 @@ div[id*=tab]:target ~ #ingrs {
 						<a href="#users">#users</a><b><a href="#tab/ingrs">#ingrs</a></b>
 					</div>
 					<div id="users">
-					   <b><a href="#users">#users</a></b><a href="#tab/ingrs">#ingrs</a>
+					   <b><a href="#users">#users</a></b> <a href="#tab/ingrs">#ingrs</a>
 					</div>
 					<div id="tab/ingrs">
 						<form action="<%=request.getContextPath()%>/administration"
 							method="post" id="form" onsubmit="addAttr()">
-							<table class="display" cellspacing="0" width="100%"
-								id="ingredients">
+							<table class="display" cellspacing="0" width="100%" id="ingredients">
 								<thead align="left">
 									<tr>
 										<th align="left">Name</th>
