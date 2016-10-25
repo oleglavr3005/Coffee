@@ -17,9 +17,7 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 	<div id="page">
-
 		<div>
 			<jsp:directive.include file="header.jsp" />
 			<div id="body">
