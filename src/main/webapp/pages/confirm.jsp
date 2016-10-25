@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Menu - Yay&#33;Koffee Website Template</title>
+<title>Menu - Yay&#33;Koffee Website Template </title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/style.css">
 <link rel="stylesheet"
