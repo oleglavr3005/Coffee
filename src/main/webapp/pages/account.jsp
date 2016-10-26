@@ -22,8 +22,7 @@
 								style="position: absolute; top: 200px; left:500px"
 								action="<%=request.getContextPath()%>/addMoney">
 								<div class="form-group">
-								<label style="color: green"><h2>Your account</h2></label><br> 
-								
+								<label style="color: green"><h2>Your account</h2></label><br> 								
 								<label  for="addMoney"
 									style="color: red">Current sum: ${currentAmount}
 								</label>
