@@ -19,7 +19,7 @@
 <body>
 	<div id="page">
 		<div>
-			<jsp:directive.include file="header.jsp" />
+			<jsp:directive.include file="header.jsp"/>
 			<div id="body">
 				<div id="figure">
 					<img src="<%=request.getContextPath()%>/images/headline-menu.jpg"
