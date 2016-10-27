@@ -23,7 +23,7 @@
 								<div class="form-group">
 								<label style="color: green"><h2>Your account</h2></label><br> 								
 								<label  for="addMoney"
-									style="color: red">Current sum: ${currentAmount}
+									style="color: red">Current sum:${currentAmount}
 								</label>								
 									 <label   for="addMoney" style="color: green"><br>Enter sum to add </label>
 								<p>
