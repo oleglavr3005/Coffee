@@ -17,7 +17,6 @@
 				<c:if test="${sessionScope.role != null}">
 					<div class="section">
 						<div id="form">
-
 							<form id="accountForm" method="POST"
 								style="position: absolute; top: 200px; left:500px"
 								action="<%=request.getContextPath()%>/addMoney">
@@ -25,8 +24,7 @@
 								<label style="color: green"><h2>Your account</h2></label><br> 								
 								<label  for="addMoney"
 									style="color: red">Current sum: ${currentAmount}
-								</label>
-								
+								</label>								
 									 <label   for="addMoney" style="color: green"><br>Enter sum to add </label>
 								<p>
 									<input class="form-control" type='number' name='addMoney' value='0' />
