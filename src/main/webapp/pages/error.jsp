@@ -9,11 +9,10 @@
 </head>
 <body>
 	<div id="page">
-
 		<div style="height: 80%">
 			<%@ include file="header.jsp"%>
 			<div style="height: 200px; padding: 100px;">
-				<h1 style="color: red;">We are sorry, but an unexpected error
+				<h1 class="err" style="color: red;">We are sorry, but an unexpected error
 					happened.</h1>
 			</div>
 			<%@ include file="footer.jsp"%>
