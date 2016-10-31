@@ -8,7 +8,7 @@ public class GeneralCustomException extends RuntimeException {
     // Classic constructor with a message of error.
     public GeneralCustomException(String message) {
         super(message);
-        //performLogging(message);
+       //performLogging(message);
     }
 
     public GeneralCustomException(String message, Throwable e) {
