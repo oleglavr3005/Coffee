@@ -34,7 +34,7 @@ public class LanguageFilter implements Filter {
         ResourceBundle rb = ResourceBundle.getBundle("lang_"+request.getParameter("language"));
         req.getSession().setAttribute("lang",rb);
 
-        //redirect to the previous page
+        //redirecting to the previous page
         ((HttpServletResponse)response).sendRedirect(req.getHeader("referer"));
     }
 
