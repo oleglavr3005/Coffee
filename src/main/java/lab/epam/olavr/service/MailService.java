@@ -30,7 +30,7 @@ public class MailService {
 		generateMailMessage.setSubject(subject);
 		String emailBody =body;
 		generateMailMessage.setContent(emailBody, "text/html");
-		System.out.println("Mail Session has been created successfully..");
+		System.out.println("Mail Session has been created successfully...");
 		generateMailMessage.setFrom("oleglavr3005@gmail.com");
 		
 		Transport transport = getMailSession.getTransport("smtp");
