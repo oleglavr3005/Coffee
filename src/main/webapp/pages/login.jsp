@@ -13,7 +13,7 @@
             <h3>Error</h3>
             <form class="login" method='POST' action='login'>
                 <p><input type='text' name='login' value='' placeholder='${lang.login}'></p>
-                <p><input type='password' name='password' value=' ' placeholder='${lang.password}'></p>
+                <p><input type='password' name='password' value='' placeholder='${lang.password}'></p>
                 <p><input type='submit' value='Login'></p>
             </form>
         </div>
