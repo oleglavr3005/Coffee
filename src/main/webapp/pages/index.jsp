@@ -7,7 +7,7 @@
 <link href="http://allfont.ru/allfont.css?fonts=kabelctt-ultra"
 	rel="stylesheet" type="text/css" />
 <meta charset="UTF-8">
-<title>Yay&#39;Koffee Website Template</title>
+<title>Yay&#39;Koffee Website</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/style.css">
 
