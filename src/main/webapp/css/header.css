@@ -85,7 +85,7 @@ p a:hover {
 }
 
 #page div div#header ul li a {
-	color: #db9e29;
+	color: #db9e28;
 	display: block;
 	font-family: 'UltraRegular';
 	font-size: 16px;
@@ -94,7 +94,7 @@ p a:hover {
 
 #page div div#header ul li.current a, #page div div#header ul li a:hover
 	{
-	border-bottom: 5px solid #a2b83c;
+	border-bottom: 5px solid #a2b83b;
 }
 
 #page #logmsg {
