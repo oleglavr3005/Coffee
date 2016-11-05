@@ -12,7 +12,7 @@
 			<li><a href="<%=request.getContextPath()%>/menu">${lang.menu}</a></li>
 			<li><a href="<%=request.getContextPath()%>/registration">${lang.register}</a></li>
 			<li><a href="<%=request.getContextPath()%>/pages/about.jsp">${lang.about}</a></li>
-			<li style="padding-left:130px;">
+			<li style="padding-left:131px;">
 				<form method="get"
 					action="<%=request.getContextPath()%>/pages/changelang">
 					<input type="hidden" name="language" value="en"> <input
