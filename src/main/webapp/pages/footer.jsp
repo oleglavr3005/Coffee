@@ -1,8 +1,7 @@
 
 <div id="footer">
 	<div>
-		<a href="index.html"><img
-			src="<%=request.getContextPath()%>/images/logo2.png" alt="Image"></a>
+		<a href="index.html"><img src="<%=request.getContextPath()%>/images/logo2.png" alt="Image"></a>
 		<p class="footnote">${lang.footnote}
 		</p>
 	</div>
