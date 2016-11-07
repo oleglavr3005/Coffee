@@ -115,7 +115,7 @@
 										step="1">3
 									</td>
 									<td style="width: 50px;">Price =</td>
-									<td class="pricecell" style="width: 50px;">${ingr.price}</td>
+									<td class="pricecell" style="width: 51px;">${ingr.price}</td>
 								</tr>
 							</c:forEach>
 						</table>
