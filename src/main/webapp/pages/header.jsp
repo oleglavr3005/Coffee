@@ -1,5 +1,5 @@
 <link href="http://allfont.ru/allfont.css?fonts=kabelctt-ultra"
-	rel="stylesheet" type="text/css" />
+	rel="stylesheet" type="text/css"/>
 
 
 <div id="header">
