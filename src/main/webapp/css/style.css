@@ -885,7 +885,7 @@ input[type=range]{
   width: 30%;
   height: 8.4px;
   cursor: pointer;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0c;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0b;
   background: #3071a9;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
