@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<<<<<<< HEAD
   <display-name>CoffeeMachine</display-name>
   <servlet>
     <servlet-name>IndexServlet</servlet-name>
@@ -20,11 +21,18 @@
   <servlet>
     <servlet-name>RegistrationServlet</servlet-name>
     <servlet-class>lab.epam.olavr.servlets.RegistrationServlet</servlet-class>
+=======
+  <display-name>CofseeMachine</display-name>
+  <servlet>
+    <servlet-name>RegistrationServlet</servlet-name>
+    <servlet-class>lab.epam.olavr.servlets.RegisterServlet</servlet-class>
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
   </servlet>
   <servlet-mapping>
     <servlet-name>RegistrationServlet</servlet-name>
     <url-pattern>/registration</url-pattern>
   </servlet-mapping>
+<<<<<<< HEAD
   <servlet>
     <servlet-name>ChooseDrinkServlet</servlet-name>
     <servlet-class>lab.epam.olavr.servlets.ChooseDrinkServlet</servlet-class>
@@ -107,3 +115,6 @@
     <url-pattern>/password</url-pattern>
   </servlet-mapping>
 </web-app>
+=======
+</web-app>
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3

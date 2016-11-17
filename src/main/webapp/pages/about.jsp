@@ -32,7 +32,11 @@
 			<div id="body">
 				<div id="figure">
 					<img src="images/headline-about.jpg" alt="Image">
+<<<<<<< HEAD
 					<span>Lorem ipsum dolor sit amet.</span>
+=======
+					<span>Lorem ipsum dolor sit amet</span>
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 				</div>
 				<div>
 					<a href="about.html" class="about">About</a>

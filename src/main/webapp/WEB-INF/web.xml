@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <display-name>CoffeeMachine</display-name>
   <servlet>
@@ -106,4 +107,123 @@
     <servlet-name>PasswordSevlet</servlet-name>
     <url-pattern>/password</url-pattern>
   </servlet-mapping>
+=======
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>CoffeeMachine</display-name>
+	<servlet>
+		<servlet-name>IndexServlet</servlet-name>
+		<servlet-class>lab.epam.olavr.servlets.IndexServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IndexServlet</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>lab.epam.olavr.servlets.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RegistrationServlet</servlet-name>
+		<servlet-class>lab.epam.olavr.servlets.RegistrationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegistrationServlet</servlet-name>
+		<url-pattern>/registration</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ChooseDrinkServlet</servlet-name>
+		<servlet-class>lab.epam.olavr.servlets.ChooseDrinkServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChooseDrinkServlet</servlet-name>
+		<url-pattern>/menu</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AdminServlet</servlet-name>
+		<servlet-class>lab.epam.olavr.servlets.AdminServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminServlet</servlet-name>
+		<url-pattern>/administration</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>/pages/index.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description></description>
+		<display-name>ConfirmServlet</display-name>
+		<servlet-name>ConfirmServlet</servlet-name>
+		<servlet-class>lab.epam.olavr.servlets.ConfirmServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConfirmServlet</servlet-name>
+		<url-pattern>/confirm</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>AddIngredients</display-name>
+		<servlet-name>AddIngredients</servlet-name>
+		<servlet-class>lab.epam.olavr.servlets.AddIngredients</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddIngredients</servlet-name>
+		<url-pattern>/AddIngredients</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>AccountServlet</display-name>
+		<servlet-name>AccountServlet</servlet-name>
+		<servlet-class>lab.epam.olavr.servlets.AccountServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AccountServlet</servlet-name>
+		<url-pattern>/account</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>AddMoneyServlet</display-name>
+		<servlet-name>AddMoneyServlet</servlet-name>
+		<servlet-class>lab.epam.olavr.servlets.AddMoneyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddMoneyServlet</servlet-name>
+		<url-pattern>/addMoney</url-pattern>
+	</servlet-mapping>
+	<listener>
+		<listener-class>lab.epam.olavr.service.InitializeLanguage</listener-class>
+	</listener>
+	<filter>
+		<display-name>AdminFilter</display-name>
+		<filter-name>AdminFilter</filter-name>
+		<filter-class>lab.epam.olavr.filter.AdminFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AdminFilter</filter-name>
+		<url-pattern>/administration</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<description></description>
+		<display-name>PasswordSevlet</display-name>
+		<servlet-name>PasswordSevlet</servlet-name>
+		<servlet-class>lab.epam.olavr.servlets.PasswordSevlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PasswordSevlet</servlet-name>
+		<url-pattern>/password</url-pattern>
+	</servlet-mapping>
+	<error-page>
+		
+			<error-code>500</error-code>
+		<location>/pages/error.jsp</location>
+		<error-code>404</error-code>
+		<location>/pages/error404.jsp</location>
+	</error-page>
+	<location>/pages/error.jsp</location>
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 </web-app>

@@ -6,7 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>Menu - Yay&#33;Koffee Website Template</title>
+=======
+<title>Menu - Yay&#33;Koffee Website Template </title>
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/style.css">
 <link rel="stylesheet"
@@ -17,24 +21,36 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
 
 	<div id="page">
 
 		<div>
 			<jsp:directive.include file="header.jsp" />
+=======
+	<div id="page">
+		<div>
+			<jsp:directive.include file="header.jsp"/>
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 			<div id="body">
 				<div id="figure">
 					<img src="<%=request.getContextPath()%>/images/headline-menu.jpg"
 						alt="Image"> <span>Unique aroma of coffee...</span>
 				</div>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 				<div id="div1">
 					<a href="menu.html" class="whatshot">What&#39;s Hot</a>
 					<div>
 						<ul>
 							<c:forEach var="drink" items="${drinks}" varStatus="loop">
+<<<<<<< HEAD
 
+=======
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 								<li><c:choose>
 										<c:when test="${loop.index % 3 == 1}">
 											<img src="<%=request.getContextPath()%>/images/coffee1.jpg"
@@ -44,7 +60,11 @@
 											<img src="<%=request.getContextPath()%>/images/coffee2.jpg"
 												alt="Image">
 										</c:when>
+<<<<<<< HEAD
 										<c:when test="${loop.index % 3== 0}">
+=======
+										<c:when test="${loop.index % 3 == 0}">
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 											<img src="<%=request.getContextPath()%>/images/coffee3.jpg"
 												alt="Image">
 										</c:when>
@@ -62,7 +82,11 @@
 						<p class="order">
 							${lang.youOrdered}: ${lang[drink.title]}
 							<c:forEach var="ingr" items="${drink.ingrs}">
+<<<<<<< HEAD
 								<c:if test="${ingr.amount > 0}">
+=======
+								<c:if test="${ingr.amount>0}">
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 									<br>
                         ${lang.with} ${ingr.amount}${lang.grOf} ${lang[ingr.title]} 
                     </c:if>
@@ -120,7 +144,11 @@
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-body">
+<<<<<<< HEAD
 					<p>Purchase is canceled!</p>
+=======
+					<p>Purchase is cancelled!</p>
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
@@ -128,7 +156,10 @@
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
 		aria-labelledby="ModalLabel" aria-hidden="true"
 		data-backdrop="static">
@@ -146,5 +177,8 @@
 		</div>
 	</div>
 </body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 </html>

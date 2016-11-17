@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\my_progs\Java\EpamMarkTask4\src\main\java\lab\epam\olavr\dao\AccountDB.java
 D:\my_progs\Java\EpamMarkTask4\src\main\java\lab\epam\olavr\service\Security.java
 D:\my_progs\Java\EpamMarkTask4\src\main\java\lab\epam\olavr\dao\IDao.java
@@ -38,3 +39,6 @@ D:\my_progs\Java\EpamMarkTask4\src\main\java\lab\epam\olavr\dao\DataSourceReposi
 D:\my_progs\Java\EpamMarkTask4\src\main\java\lab\epam\olavr\servlets\IndexServlet.java
 D:\my_progs\Java\EpamMarkTask4\src\main\java\lab\epam\olavr\service\PasswordService.java
 D:\my_progs\Java\EpamMarkTask4\src\main\java\lab\epam\olavr\servlets\AddMoneyServlet.java
+=======
+D:\my_progs\Java\EpamMarkTask4\src\main\java\lab\epam\olavr\servlets\RegisterServlet.java
+>>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
