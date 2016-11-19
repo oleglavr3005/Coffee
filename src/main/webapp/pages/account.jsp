@@ -17,27 +17,10 @@
 				<c:if test="${sessionScope.role != null}">
 					<div class="section">
 						<div id="form">
-<<<<<<< HEAD
-
-=======
->>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 							<form id="accountForm" method="POST"
 								style="position: absolute; top: 200px; left:500px"
 								action="<%=request.getContextPath()%>/addMoney">
 								<div class="form-group">
-<<<<<<< HEAD
-								<label style="color: green"><h2>Your account</h2></label><br> 
-								
-								<label  for="addMoney"
-									style="color: red">Current sum: ${currentAmount}
-								</label>
-								
-									 <label   for="addMoney" style="color: green"><br>Enter sum to add </label>
-								<p>
-									<input class="form-control" type='number' name='addMoney' value='0' />
-								</p>
-								
-=======
 								<label style="color: green"><h2>Your account</h2></label><br> 								
 								<label  for="addMoney"
 									style="color: red">Current sum:${currentAmount}
@@ -46,7 +29,6 @@
 								<p>
 									<input class="form-control" type='number' name='addMoney' value='0' />
 								</p>								
->>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 								<p>
 									<input class="btn btn-default" type='submit' value='Submit'>
 								</p>
@@ -60,15 +42,11 @@
 			<%@ include file="footer.jsp"%>
 		</div>
 	</div>
-<<<<<<< HEAD
-
-=======
   <script>
 	$(document).ready(function() {
 		$('#header ul li:nth-child(4)').addClass('current');
 		$('#footer ul li:nth-child(4)').addClass('current');
 	});
 </script>
->>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 </body>
 </html>
