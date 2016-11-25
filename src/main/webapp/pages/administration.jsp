@@ -13,20 +13,12 @@
 <script type="text/javascript"
 	src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
 <script type="text/javascript" charset="utf-8">
-<<<<<<< HEAD
-  window.onload=function(){
-	//  var isValidData = '<c:out value="${AdminServlet.isValidData}" />';
-	 var mes= '${message}';
-	if (mes) alert(mes);
-  }
-=======
 	window.onload = function() {
 		//  var isValidData = '<c:out value="${AdminServlet.isValidData}" />';
 		var mes = '${message}';
 		if (mes)
 			alert(mes);
 	}
->>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 	$(document).ready(function() {
 		$('#ingredients').DataTable();
 	});
@@ -36,48 +28,6 @@
 				'value', "addIngredients").appendTo('#form');
 		return true;
 	}
-<<<<<<< HEAD
-	
-	
-</script>
-</head>
-<body>
-<c:if test="${role==2 }">
-	<div id="page">
-
-		<div>
-			<jsp:directive.include file="header.jsp" />
-			<div class="container">
-
-				<form action="<%=request.getContextPath()%>/administration"
-					method="post" id="form" onsubmit="addAttr()">
-
-					<table class="display" cellspacing="0" width="100%"
-						id="ingredients">
-						<thead align="left">
-							<tr>
-								<th align="left">Name</th>
-								<th align="left">Amount</th>
-								<th align="left">MaxAmount</th>
-								<th align="left">NewAmount</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="ingr" items="${ingredients}" varStatus="loop">
-								<tr>
-									<td>${ingr.ingredientName}</td>
-									<td>${ingr.amount}</td>
-									<td>${ingr.maxAmount}</td>
-									<td><input type="text" name="${ingr.ingredientName}"
-										value="${ingr.amount}"></td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-					<button type="submit">Submit form</button>
-								<div style="color:red; align:center">${message} </div>
-				</form>
-=======
 </script>
 <style>
 
@@ -164,7 +114,6 @@ div[id*=tab]:target ~ #ingrs {
 						</form>
 					</div>
 				</div>
->>>>>>> efeeaaf0ca360e491f09dacb324f789157019bc3
 			</div>
 		</div>
 		<script type="text/javascript">
