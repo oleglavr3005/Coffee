@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Menu - Yay&#33;Koffee Website Template</title>
+<title>Menu-Yay&#33;Koffee Website Template</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/style.css">
 <link rel="stylesheet"
@@ -19,7 +19,6 @@
 	var basePrice = 0;
 	var drinkName = "";
 	function calcPrice() {
-
 		var s = "0";
 		var arrIngr = [];
 		var arrPr = [];
@@ -46,9 +45,8 @@
 			$(obj).val(0);
 		});
 	}
-
 	function addDrink(event) {
-		$('<input />').attr('type', 'hidden').attr('name', 'drink').attr(
+		$('<input />').attr('type','hidden').attr('name','drink').attr(
 				'value', drinkName).appendTo('#form');
 		return true;
 	}
@@ -63,9 +61,6 @@
 					<img src="<%=request.getContextPath()%>/images/headline-menu.jpg"
 						alt="Image"> <span>Unique aroma of coffee...</span>
 				</div>
-
-				
-
 				<div id="div1">
 					<a href="menu.html" class="whatshot">What&#39;s Hot</a>
 					<div>
@@ -94,7 +89,6 @@
 						</ul>
 					</div>
 				</div>
-
 			</div>
 			<jsp:directive.include file="footer.jsp" />
 		</div>
@@ -104,14 +98,13 @@
 			aria-labelledby="ModalLabel" aria-hidden="true"
 			data-backdrop="static">
 			<div class="modal-dialog">
-
 				<div class="modal-content">
 					<form id="form" action="<%=request.getContextPath()%>/confirm"
 						onsubmit="addDrink()" class="form-horizontal" role="form"
 						method="get">
 						<h3 style="margin-left: 30px;">Ingredients:</h3>
 						<table id="order"
-							style="margin-left: 30px; border-spacing: 5px 2px">
+							style="margin-left: 30px; border-spacing: 6px 2px">
 							<c:forEach var="ingr" items="${ingredients}">
 								<tr>
 									<td style="width: 90px;">${ingr.ingredientName}</td>
@@ -122,7 +115,7 @@
 										step="1">3
 									</td>
 									<td style="width: 50px;">Price =</td>
-									<td class="pricecell" style="width: 50px;">${ingr.price}</td>
+									<td class="pricecell" style="width: 52px;">${ingr.price}</td>
 								</tr>
 							</c:forEach>
 						</table>
@@ -136,10 +129,14 @@
 						</div>
 					</form>
 				</div>
-
-
 			</div>
 		</div>
 	</c:if>
 </body>
+<script>
+	$(document).ready(function() {
+		$('#header ul li:nth-child(2)').addClass('current');
+		$('#footer ul li:nth-child(2)').addClass('current');
+	});
+</script>
 </html>
