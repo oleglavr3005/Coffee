@@ -7,8 +7,7 @@
 <meta charset="UTF-8">
 <title>Yay&#39;Koffee Website Template</title>
 <link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/style.css">
-	
+	href="<%=request.getContextPath()%>/css/style.css">	
 </style>
 </head>
 <body>
@@ -61,11 +60,9 @@
 					</ul>
 					<div id="form">
 
-						<h3>Password renewal</h3>
-					
+						<h3>Password renewal</h3>				
 						<form id="passwordForm" name="passwordForm"
 							action="http://localhost:8080/EpamMarkTask4/password" method="POST">
-
 							<label for="login">${lang.login}</label> <input class="form-control"
 								id="login" name="login" type="text" value=""
 								placeholder=${lang.login} size="30" autocomplete="on"
@@ -74,15 +71,12 @@
 							<input class="form-control" id="email" name="email"
 								type="email" value="" placeholder=email size="30"
 								autocomplete="on" />
-
-
 							<button type="submit" class="btn btn-primary"
-								style="width: 88px;">${lang.submit}</button>
+								style="width: 87px;">${lang.submit}</button>
 								<p>${message}</p>
 								<p>${lang[error]}</p>
 						</form>
 					</div>
-
 				</div>
 			</div>
 				<jsp:directive.include file="footer.jsp" />
